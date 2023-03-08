@@ -3,6 +3,7 @@ from services.get_answer import get_answer
 from services.send_answer import send_answer
 from components.core import starter
 
+starter(1)
 print("\nATTACK (1) || GET_ANSWER (2) || SEND_ANSWER(WordCloud) (3)")
 
 WANT = ""

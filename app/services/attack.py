@@ -1,7 +1,6 @@
 import requests
-from components.core import generate_token
 
-def attack():
+def attack(TOKEN):
     WOOCLAP_ID = ""
     LOST = ""
     NUMBER_ATTACK = ""
@@ -17,7 +16,7 @@ def attack():
 
     for i in range(int(NUMBER_ATTACK)):
 
-        TOKEN = generate_token()
+        # TOKEN = generate_token()
         BEARER = f"bearer {TOKEN}"
 
         requests.post(f"https://app.wooclap.com/api/user?slug={WOOCLAP_ID}", headers={ "authorization": BEARER }).json()

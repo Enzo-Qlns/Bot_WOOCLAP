@@ -17,6 +17,7 @@ def generate_token():
     unix_timestamp = datetime.datetime.timestamp(presentDate)*1000
     return f"z{math.floor(random.random() * random.random() * unix_timestamp)}"
 
+
 def starter(TIMING):
     lines = readFileFrom("ascii.starter")
     print("".join(lines))

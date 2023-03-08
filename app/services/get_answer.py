@@ -1,12 +1,9 @@
 import requests
-from components.core import generate_token
 
-
-def get_answer():
+def get_answer(TOKEN):
     
     WOOCLAP_ID = ""
     TITLE = ""
-    TOKEN = ""
 
     if WOOCLAP_ID == "":
         WOOCLAP_ID = input("WOOCLAP_ID ?\n> ")
@@ -14,9 +11,6 @@ def get_answer():
     if TITLE == "":
         TITLE = input("TITLE QUESTION ? \n> ")
 
-    if TOKEN == "":
-        TOKEN = generate_token()
-    
     URL = f"https://app.wooclap.com/api/events/{WOOCLAP_ID}"
     HEADERS = { 'Authorization': f'Bearer {TOKEN}' }
 

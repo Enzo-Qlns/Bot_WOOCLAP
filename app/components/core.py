@@ -6,7 +6,6 @@ import random
 import time
 
 
-@staticmethod
 def readFileFrom(path=None):
     if None != path:
         return open(path, 'r').readlines()

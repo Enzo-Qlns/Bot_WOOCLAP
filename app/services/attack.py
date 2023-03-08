@@ -15,7 +15,7 @@ def attack():
     if LOST == "":
         LOST = input("LOST ? YES or NO\n> ")
 
-    for i in range(0,int(NUMBER_ATTACK)):
+    for i in range(int(NUMBER_ATTACK)):
 
         TOKEN = generate_token()
         BEARER = f"bearer {TOKEN}"

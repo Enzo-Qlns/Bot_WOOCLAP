@@ -25,4 +25,4 @@ elif int(WANT) == 2:
 elif int(WANT) == 3:
     send_answer(TOKEN)
 
-print("\nDONE!")
+print("\nBYE!")

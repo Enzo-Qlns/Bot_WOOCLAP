@@ -1,6 +1,6 @@
 import requests
 
-def attack(TOKEN):
+def add_users(TOKEN):
     WOOCLAP_ID = ""
     LOST = ""
     NUMBER_ATTACK = ""

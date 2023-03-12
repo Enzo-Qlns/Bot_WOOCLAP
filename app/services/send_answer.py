@@ -21,7 +21,7 @@ def send_answer(TOKEN):
     }
     PAYLOAD = json.dumps({"text": TEXT})
     
-    for i in range(int(NBR_ATTACK)):
+    for _ in range(int(NBR_ATTACK)):
         requests.post(f"https://app.wooclap.com/api/questions/{ID_QUESTION}/push_answer", headers=HEADERS, data=PAYLOAD)
-        print(f"\n'{TEXT}' IS SENDS...")
+        print(f"\n'{TEXT}' IS SENDING...")
     

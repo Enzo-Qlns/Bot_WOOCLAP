@@ -14,9 +14,8 @@ def add_users(TOKEN):
     if LOST == "":
         LOST = input("LOST ? YES or NO\n> ")
 
-    for i in range(int(NUMBER_ATTACK)):
+    for _ in range(int(NUMBER_ATTACK)):
 
-        # TOKEN = generate_token()
         BEARER = f"bearer {TOKEN}"
 
         requests.post(f"https://app.wooclap.com/api/user?slug={WOOCLAP_ID}", headers={ "authorization": BEARER }).json()

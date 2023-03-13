@@ -1,5 +1,7 @@
 import requests
 
+# Send bot to display several persons into session
+
 def add_users(TOKEN):
     WOOCLAP_ID = ""
     LOST = ""

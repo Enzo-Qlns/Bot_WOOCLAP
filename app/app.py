@@ -4,6 +4,8 @@ from services.send_answer import send_answer
 from components.core import generate_token
 from components.core import starter
 
+# main page
+
 starter(1)
 print("\nATTACK (1) || GET_ANSWER (2) || SEND_ANSWER(WordCloud) (3)")
 

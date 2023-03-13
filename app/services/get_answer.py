@@ -1,5 +1,7 @@
 import requests
 
+# find answer of a question
+
 def get_answer(TOKEN):
     
     WOOCLAP_ID = ""
@@ -19,21 +21,22 @@ def get_answer(TOKEN):
 
     for i in range(1, len(QUESTIONS)):
         if (QUESTION_TITLE == QUESTIONS[i]["title"]):
+            match QUESTIONS[i]["__t"]:
 
-            if (QUESTIONS[i]["__t"] == "GuessNumber"):
-                CORRECT_ANSWER = QUESTIONS[i]["correctAnswer"]
+                case "correctAnswer":
+                    CORRECT_ANSWER = QUESTIONS[i]["correctAnswer"]
 
-            elif (QUESTIONS[i]["__t"] == "OpenQuestion"):
-                CORRECT_ANSWER = QUESTIONS[i]["allExpectedAnswers"]
-            
-            elif (QUESTIONS[i]["__t"] == "MCQ"):
-                for y in range(len(QUESTIONS[i]["choices"])):
-                    if QUESTIONS[i]["choices"][y]["isCorrect"]:
-                        CORRECT_ANSWER = QUESTIONS[i]["choices"][y]["choice"]
+                case "OpenQuestion":
+                    CORRECT_ANSWER = QUESTIONS[i]["allExpectedAnswers"]
 
-            elif (QUESTIONS[i]["__t"] == "FillInTheBlanks"):
-                CORRECT_ANSWER = []
-                for y in range(len(QUESTIONS[i]["choices"])):
-                    CORRECT_ANSWER.append(QUESTIONS[i]["choices"][y]["text"])
-          
+                case "MCQ":
+                    for y in range(len(QUESTIONS[i]["choices"])):
+                        if QUESTIONS[i]["choices"][y]["isCorrect"]:
+                            CORRECT_ANSWER = QUESTIONS[i]["choices"][y]["choice"]
+
+                case "FillInTheBlanks":
+                    CORRECT_ANSWER = []
+                    for y in range(len(QUESTIONS[i]["choices"])):
+                        CORRECT_ANSWER.append(QUESTIONS[i]["choices"][y]["text"])
+
     print(f"\n> GOOD ANSWER: {CORRECT_ANSWER}")

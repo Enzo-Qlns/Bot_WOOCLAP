@@ -3,13 +3,13 @@ import requests
 def get_answer(TOKEN):
     
     WOOCLAP_ID = ""
-    QUESTIONTITLE = ""
+    QUESTION_TITLE = ""
 
     if WOOCLAP_ID == "":
         WOOCLAP_ID = input("WOOCLAP_ID ?\n> ")
 
-    if QUESTIONTITLE == "":
-        QUESTIONTITLE = input("QUESTIONTITLE QUESTION ? \n> ")
+    if QUESTION_TITLE == "":
+        QUESTION_TITLE = input("TITLE QUESTION ? \n> ")
 
     URL = f"https://app.wooclap.com/api/events/{WOOCLAP_ID}"
     HEADERS = { 'Authorization': f'Bearer {TOKEN}' }
@@ -18,7 +18,7 @@ def get_answer(TOKEN):
     QUESTIONS = RESPONSES["questions"]
 
     for i in range(1, len(QUESTIONS)):
-        if (QUESTIONTITLE == QUESTIONS[i]["QUESTIONtitle"]):
+        if (QUESTION_TITLE == QUESTIONS[i]["title"]):
 
             if (QUESTIONS[i]["__t"] == "GuessNumber"):
                 CORRECT_ANSWER = QUESTIONS[i]["correctAnswer"]

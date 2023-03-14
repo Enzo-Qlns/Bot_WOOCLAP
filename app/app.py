@@ -18,13 +18,15 @@ if WANT == "":
 while (int(WANT) != 1 and int(WANT) != 2 and int(WANT) != 3):
     WANT = input("\nWhat do you choose ? \n> ")
 
-if int(WANT) == 1:
-    add_users(TOKEN)
 
-elif int(WANT) == 2:
-    get_answer(TOKEN)
+match int(WANT):
+    case 1:
+        add_users(TOKEN)
 
-elif int(WANT) == 3:
-    send_answer(TOKEN)
+    case 2: 
+        get_answer(TOKEN)
+
+    case 3:
+        send_answer(TOKEN)
 
 print("\nBYE!")
